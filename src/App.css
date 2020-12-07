@@ -27,6 +27,222 @@
 .App-link {
   color: #61dafb;
 }
+a{
+  text-decoration: none;
+}
+
+.centrename{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: lighter;
+  font-family: Cambria;
+  font-size: 1.5cm;
+  margin-top: 15px;
+  margin-bottom: 0px;
+  padding-top: 1px;
+  padding-bottom: 0px;
+}
+
+.centreaddress{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  line-height: 0px;
+  color: grey;
+}
+
+.centrecontact{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -15px;
+  padding-top: 0px;
+  font-weight: 600;
+}
+
+.centrequote{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
+  font-style: italic;
+}
+
+.contentheading{
+  margin-left: 7cm;
+  padding-top: 10px;
+  margin-bottom: 0px;
+  color: rgb(32, 32, 122); 
+}
+.virtualspace{
+  color: white ;
+}
+.vertical { 
+  border-left: 3px solid black; 
+  height: 3500px; 
+  position:absolute; 
+  left: 5cm;
+}
+
+.verticalright{
+  border-left: 3px solid black; 
+  height: 3500px; 
+  position:absolute; 
+  left: 30cm;
+}
+
+.horizontal{
+  border-top: 2px solid indigo;
+  width: 20cm;
+  margin-left: 7cm;
+}
+
+.peducation{
+  margin-left: 7cm;
+  margin-right: 8cm;
+}
+
+.etimeline{
+  margin-left: 7cm;
+  font-weight: 400;
+}
+
+.econtentfirst{
+  padding-left: 1cm;
+  margin-right: 0cm;
+}
+
+.econtentinner{
+  margin-left: 10cm;
+  font-weight: 400;
+}
+
+.econtentafter{
+  margin-left: 5px;
+  font-weight: 400;
+}
+
+.headiconpad{
+  color: rgb(32, 32, 122);
+  
+}
+.iconpadding{
+   color: rgb(32, 32, 122);
+   margin-top: 5px;
+   margin-left: 10cm;
+ }
+
+.nextcontent{
+  padding-top: 10px;
+}
+
+.wecontent1first{
+  padding-left: 17px;
+  margin-right: 0cm;
+  font-weight: 400;
+}
+
+.wecontent1inner{
+  padding-left: 1.6cm;
+  margin-right: 0cm;
+  font-weight: 400;
+}
+
+.wecontent2first{
+  padding-left: 18px;
+  margin-right: 0cm;
+  font-weight: 400;
+}
+
+.wecontent2inner{
+  padding-left: 1.12cm;
+  margin-right: 0cm;
+  font-weight: 400;
+}
+
+.wecontent3first{
+  padding-left: 36px;
+  margin-right: 0cm;
+  font-weight: 400;
+}
+
+.wecontent3inner{
+  padding-left: 0.65cm;
+  margin-right: 0cm;
+  font-weight: 400;
+}
+
+.wecontent4first{
+  padding-left: 8.5px;
+  margin-right: 0cm;
+  font-weight: 400;
+}
+
+.wecontent4inner{
+  padding-left: 0.55cm;
+  margin-right: 0cm;
+  font-weight: 400;
+}
+
+.wecontent5first{
+  padding-left: 36.5px;
+  margin-right: 0cm;
+  font-weight: 400;
+}
+
+.wecontent5inner{
+  padding-left: 0.65cm;
+  margin-right: 0cm;
+  font-weight: 400;
+}
+
+.pcontent{
+  margin-top: 0cm;
+  margin-left: 10cm;
+  padding-right: 8cm;
+  font-weight: 400;
+}
+
+.tscontent{
+  margin-left: 7cm;
+  margin-right: 8cm;
+  font-weight: 600;
+}
+
+.tsskill{
+  margin-left: 7cm;
+  font-style: italic;
+  font-weight: 400;
+  color:   rgb(32, 32, 122);
+
+}
+.tsfont{
+  margin-left: 0.5cm;
+  font-weight: 400;
+}
+
+.rccontent{
+  margin-top: 10px;
+  margin-left: 7cm;
+  padding-right: 8cm;
+  font-weight: 400;
+}
+
+.aacontent{
+  margin-left: 7cm;
+  padding-right: 8cm;
+  font-weight: 400;
+}
+
+.wtcontent{
+  padding-top: 10px;
+  margin-left: 7cm;
+  text-decoration: none;
+}
 
 @keyframes App-logo-spin {
   from {

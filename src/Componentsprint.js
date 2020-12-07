@@ -1,8 +1,6 @@
-import logo from './logo.svg';
-import './App.css';
-import React, {useRef} from 'react'; 
-import Example from './Componentsprint';
-import {AiFillGithub,AiFillMail,SiGmail,SiReactos} from "react-icons/si";
+import React from "react";
+import ReactToPrint from "react-to-print";
+import {AiFillGithub,AiFillMail,SiGmail} from "react-icons/si";
 import {FaMobileAlt,FaLinkedin,FaGraduationCap,FaUniversity,FaSlidersH,} from "react-icons/fa";
 import {FiArrowRightCircle} from "react-icons/fi";
 import {FcCellPhone,FcFeedback,FcPhoneAndroid} from "react-icons/fc";
@@ -11,21 +9,16 @@ import {AiOutlineRight,AiOutlineRightCircle} from "react-icons/ai";
 import {BsCaretRight,BsFillBriefcaseFill} from "react-icons/bs";
 import {RiArrowDropRightLine,RiArrowRightSLine} from "react-icons/ri";
 import {BiRightArrow,BiSpreadsheet} from "react-icons/bi";
-import {ImLocation,ImHome3,ImBook,ImEqualizer} from "react-icons/im";
-import {GrSatellite,GrAchievement} from "react-icons/gr";
+import {ImLocation,ImHome3} from "react-icons/im";
+import {GrSatellite} from "react-icons/gr";
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
+import {PDFExport} from '@progress/kendo-react-pdf';
 
-
-
-
-// import ReactToPdf from "react-to-pdf";
-// import React from "react";
-// import './declare_module.d.ts';
-
-
-
-function App() {
-  return (
-    <div className="resume">
+class ComponentToPrint extends React.Component {
+  render() {
+    return (
+      <div className="resume">
       <div className="vertical"></div>
       <div className="verticalright"></div>
       <h1 className="centrename">Rahul Khanna</h1> 
@@ -55,7 +48,7 @@ function App() {
       </span>
         <h4 className="centrequote">"My favorite Quote"</h4>
       <div>
-        <h2 className="contentheading"><SiReactos className="headiconpad" size={21} /> Research Interests</h2>
+        <h2 className="contentheading"><GrSatellite className="headiconpad" size={21} /> Research Interests</h2>
         <div className="horizontal"></div>
         <p className="peducation">I am a passionate and curious explorer of universe's hidden secrets, with my learned skills and knowledge I 
            thrive to decode most of these secrets. With my aim to gather more knowledge and develop experimental skills,
@@ -114,7 +107,7 @@ function App() {
            <a style={{fontStyle: "italic"}} href ="https://www.medidata.com/en/" className="wecontent1inner">Brand : Medidata Solutions</a>
           </span>
         </div>
-        <a style={{color: "black"}} href="https://www.3ds.com/"className="econtentinner">Dassault Systèmes, Pune, India</a> 
+        <a style={{color: "black"}} href="https://www.3ds.com/"className="econtentinner">Dassault Systèmes, Pune</a> 
         <div name="btp_project" className="nextcontent">
           <span>
            <b className="etimeline">August 2019-</b>
@@ -188,7 +181,7 @@ function App() {
       </div>
 
       <div>
-        <h2 className="contentheading"><BiSpreadsheet className="headiconpad" size={22} />Projects</h2>
+        <h2 className="contentheading"><BiSpreadsheet className="headiconpad" size={21} />Projects</h2>
         <div className="horizontal"></div>
         <div name="btp_project" className="nextcontent">
           <span>
@@ -278,7 +271,7 @@ function App() {
         </div>
       </div>
       <div>
-        <h2 className="contentheading"><ImEqualizer className="headiconpad" size={20} /> Technical Skills</h2>
+        <h2 className="contentheading"><FaSlidersH className="headiconpad" size={20} /> Technical Skills</h2>
         <div className="horizontal"></div>
         <div className="nextcontent">
           <b className= "tscontent">
@@ -312,11 +305,11 @@ function App() {
         </div>   
       </div>
       <div>
-        <h2 className="contentheading">< ImBook className="headiconpad" size={22} /> Relevant Coursework</h2>
+        <h2 className="contentheading">Relevant Coursework</h2>
         <div className="horizontal"></div>
         <div className="nextcontent">
          <b className= "tscontent">
-            Courses in Physics: 
+            Courses in P: 
           </b>
         </div>
         <p className="rccontent">
@@ -325,7 +318,7 @@ function App() {
         </p>
         <div >
          <b className= "tscontent">
-            Courses in Mathematics: 
+            Courses in M: 
           </b>
         </div>
         <p className="rccontent">
@@ -349,10 +342,10 @@ function App() {
         </div>    
       </div> 
       <div>  
-        <h2 className="contentheading">< GrAchievement size={20} color="blue"/> Honors and Achievements</h2>
+        <h2 className="contentheading">Honors and Achievements</h2>
         <div className="horizontal"></div>
         <p className="aacontent">
-        <FiArrowRightCircle className="headiconpad" size={13}/> Graduated from IIT Ropar with a department rank 7 and cumulative GPA 8.06 .  (2020)
+        <FiArrowRightCircle className="headiconpad" size={13}/> Graduated from IIT Ropar with a department rank 7 and cumulative GPA 8.06.  (2020)
         </p>
         <p className="aacontent">
         <FiArrowRightCircle className="headiconpad" size={13}/> Secretary Head (Mentor) of Zenith-Astronomy and Astrophysics Club. (2018-2019)
@@ -387,14 +380,24 @@ function App() {
         </p>      
       </div> 
     </div>
-    {/* <div>
-      <Example/>
-    </div> */}
-  </div>
     
-  );
+  </div>
+    );
+  }
 }
 
+class Example extends React.Component {
+  render() {
+    return (
+      <div>
+        <ReactToPrint
+          trigger={() => <a href="#">Print this out!</a>}
+          content={() => this.componentRef}
+        />
+        <ComponentToPrint ref={(el) => (this.componentRef = el)} />
+      </div>
+    );
+  }
+}
 
-
-export default App;
+export default Example;
